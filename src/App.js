@@ -8,7 +8,6 @@ import Home from "./components/Home/Home";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import Notfound from "./components/Notfound/Notfound";
-import Footer from "./components/Header/Footer/Footer";
 import Login from "./components/Login/Login/Login";
 import Register from "./components/Login/Login/Register/Register";
 import Authprovider from "./Context/Authprovider";
@@ -85,7 +84,6 @@ function App() {
                 <Notfound></Notfound>
               </Route>
             </Switch>
-            <Footer></Footer>
           </BrowserRouter>
         </ThemeProvider>
       </Authprovider>

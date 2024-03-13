@@ -1,0 +1,8 @@
+.tutorial-section {
+    display: flex;
+    justify-content: center;
+}
+.tutorial-control {
+    width: 60vw;
+    height: 50vh;
+}

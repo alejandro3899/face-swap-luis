@@ -97,13 +97,12 @@ const Login = () => {
       <Container id="login" maxWidth="xl">
         {user?.email ? (
           <>
-            <UserProfile />
+            {/* <UserProfile /> */}
           </>
         ) : (
           <>
-            {/* if user is logout */}
             <Container component="main" maxWidth="xs">
-              <CssBaseline />
+              {/* <CssBaseline />
 
               <Box
                 sx={{
@@ -186,7 +185,6 @@ const Login = () => {
                     </Button>
                   </Grid>
                 </Grid>
-                {/* google btn */}
 
                 <Typography style={{ justifyContent: "center" }}>
                   <Grid
@@ -204,7 +202,7 @@ const Login = () => {
                   </Grid>
 
                   <Grid container sx={{ mb: 3 }} justifyContent="flex-end">
-                    {/* Facebook btn */}
+
                     <Grid item>
                       <Button
                         onClick={handleFacebooksignIn}
@@ -218,7 +216,7 @@ const Login = () => {
                     <Typography textAlign="center" sx={{ p: 2 }}>
                       Or
                     </Typography>
-                    {/* GitHUB btn */}
+
                     <Grid item>
                       <Button
                         onClick={handleGithubSignIn}
@@ -230,7 +228,7 @@ const Login = () => {
                     </Grid>
                   </Grid>
                 </Typography>
-              </Box>
+              </Box> */}
             </Container>
           </>
         )}

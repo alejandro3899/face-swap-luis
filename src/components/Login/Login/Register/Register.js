@@ -37,11 +37,11 @@ const Register = () => {
       <CssBaseline />
       {user?.email ? (
         <>
-          <UserProfile />
+          {/* <UserProfile /> */}
         </>
       ) : (
         <>
-          <Box
+          {/* <Box
             sx={{
               marginTop: 8,
               marginBottom: 8,
@@ -182,7 +182,6 @@ const Register = () => {
                     justifyContent="flex-end"
                     style={{ justifyContent: "center" }}
                   >
-                    {/* Facebook btn */}
                     <Grid item>
                       <Button
                         onClick={singInUsingFacebook}
@@ -196,7 +195,6 @@ const Register = () => {
                     <Typography textAlign="center" sx={{ p: 2 }}>
                       Or
                     </Typography>
-                    {/* GitHUB btn */}
                     <Grid item>
                       <Button
                         onClick={singInUsingGithub}
@@ -211,7 +209,7 @@ const Register = () => {
                 </Typography>
               </Typography>
             </Box>
-          </Box>
+          </Box> */}
         </>
       )}
     </Container>

@@ -2,7 +2,6 @@ import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import About from "./components/About/About";
 import Header from "./components/Header/Header/Header";
 import Home from "./components/Home/Home";
 import { ThemeProvider } from "@mui/material";
@@ -64,9 +63,6 @@ function App() {
               </Route>
               <Route path="/register">
                 <Register></Register>
-              </Route>
-              <Route path="/about">
-                <About></About>
               </Route>
               <Route path="/profile">
                 <Login></Login>

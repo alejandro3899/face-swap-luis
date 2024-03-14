@@ -1,0 +1,10 @@
+.instagram-users {
+    display: flex;
+    flex-direction: column;
+    color: blue;
+    gap: 0.5rem; 
+}
+
+.user-item {
+    padding: 10px 20px;
+}

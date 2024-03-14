@@ -123,6 +123,23 @@ const Navbar = () => {
                   smooth
                   to="/services"
                 >
+                  Generate
+                </MenuItem>
+
+                <MenuItem
+                  bgcolor="primary"
+                  component={HashLink}
+                  smooth
+                  to="/doctors"
+                >
+                  Videos
+                </MenuItem>
+                <MenuItem
+                  bgcolor="primary"
+                  component={HashLink}
+                  smooth
+                  to="/services"
+                >
                   Guide
                 </MenuItem>
 
@@ -140,7 +157,7 @@ const Navbar = () => {
                   smooth
                   to="/appointment"
                 >
-                  Support
+                  Balance 0$
                 </MenuItem>
 
                 {!user?.email && (

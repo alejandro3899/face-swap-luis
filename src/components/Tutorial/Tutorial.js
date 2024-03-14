@@ -2,7 +2,6 @@ import React from 'react';
 
 import './Tutorial.css'
 import ReactPlayer from 'react-player/lazy'
-import { CardMedia } from '@mui/material';
 
 const Tutorial = () => {
     return (

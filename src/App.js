@@ -38,7 +38,7 @@ export const myTheme = createTheme({
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 700,
-  },
+  }
 });
 
 function App() {

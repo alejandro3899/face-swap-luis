@@ -41,7 +41,7 @@ const Register = () => {
         </>
       ) : (
         <>
-          {/* <Box
+          <Box
             sx={{
               marginTop: 8,
               marginBottom: 8,
@@ -160,56 +160,8 @@ const Register = () => {
                   </Button>
                 </Grid>
               </Grid>
-              <Typography>
-                <Typography style={{ justifyContent: "center" }}>
-                  <Grid
-                    container
-                    sx={{ mt: 2, mb: 3 }}
-                    justifyContent="flex-end"
-                    style={{ justifyContent: "center" }}
-                  >
-                    <Grid item>
-                      <GoogleButton
-                        className="google-btn"
-                        type="dark" // can be light or dark
-                        onClick={singInUsingGoogle}
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid
-                    container
-                    sx={{ mb: 3 }}
-                    justifyContent="flex-end"
-                    style={{ justifyContent: "center" }}
-                  >
-                    <Grid item>
-                      <Button
-                        onClick={singInUsingFacebook}
-                        variant="contained"
-                        sx={{ p: 1, bgcolor: "#4267B2" }}
-                      >
-                        <FacebookIcon />
-                        Facebook
-                      </Button>
-                    </Grid>
-                    <Typography textAlign="center" sx={{ p: 2 }}>
-                      Or
-                    </Typography>
-                    <Grid item>
-                      <Button
-                        onClick={singInUsingGithub}
-                        variant="contained"
-                        sx={{ p: 1, mb: 2, bgcolor: "#171515" }}
-                        style={{ justifyContent: "center" }}
-                      >
-                        <GitHubIcon /> GitHub
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Typography>
-              </Typography>
             </Box>
-          </Box> */}
+          </Box>
         </>
       )}
     </Container>

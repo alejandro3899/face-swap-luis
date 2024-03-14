@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Grid, LinearProgress, Typography } from '@mui/material';
+import { Box, Button, Container, LinearProgress, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import useData from '../../../Hooks/useData';
 import './Intro.css'
@@ -23,7 +23,7 @@ const Intro = () => {
     return (
 
 
-        <Box sx={{ bgcolor: '#000', color: '#fff', px: '30', pt:'5rem', mb: 2, textAlign: "center" }}>
+        <Box sx={{ bgcolor: '#000', color: '#fff', pt:'5rem', mb: 2, textAlign: "center" }}>
             <Container maxWidth="xl">
                 <Typography sx={{ mt: 2, fontWeight: 700, fontSize: '3.75rem' }}
                     variant='h4'

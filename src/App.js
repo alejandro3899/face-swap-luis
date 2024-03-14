@@ -10,6 +10,7 @@ import Notfound from "./components/Notfound/Notfound";
 import Login from "./components/Login/Login/Login";
 import Register from "./components/Login/Login/Register/Register";
 import Authprovider from "./Context/Authprovider";
+import Guide from "./components/Guide/Guide";
 import Services from "./components/Services/Services";
 import Doctors from "./components/Services/Doctors/Doctors";
 import Appointment from "./components/Services/Appointment/Appointment";
@@ -54,6 +55,9 @@ function App() {
               </Route>
               <Route path="/home">
                 <Home></Home>
+              </Route>
+              <Route path="/guide">
+                <Guide />
               </Route>
               <PrivetRoute path="/doctors">
                 <Doctors></Doctors>

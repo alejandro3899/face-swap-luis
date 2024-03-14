@@ -9,82 +9,22 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import GoogleButton from "react-google-button";
 import "./Login.css";
 import useAuth from "../../../Hooks/useAuth";
 import UserProfile from "./UserProfile/UserProfile";
-import LoginIcon from "@mui/icons-material/Login";
 import { Link } from "react-router-dom";
-import { Fingerprint } from "@mui/icons-material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const {
-    singInUsingGoogle,
     handlePasswordReset,
     user,
-    setUser,
     mail,
-    singInUsingFacebook,
-    singInUsingGithub,
     handleRegister,
     handleEmail,
     handlePass,
     error,
-    setError,
     toggleLogin,
-    setIsLoading,
   } = useAuth();
-
-  //location is use for privet route
-  const location = useLocation();
-  const history = useHistory();
-  const redirect_url = location.state?.from || "/profile";
-
-  const handleGoogleSignIn = () => {
-    singInUsingGoogle()
-      .then((result) => {
-        const loggedInUser = result.user;
-        setUser(loggedInUser);
-        history.push(redirect_url);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      })
-      .finally(() => setIsLoading(false));
-  };
-
-  const handleFacebooksignIn = () => {
-    singInUsingFacebook()
-      .then((result) => {
-        console.log(result.user);
-        const loggedInUser = result.user;
-        setUser(loggedInUser);
-        history.push(redirect_url);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      })
-      .finally(() => setIsLoading(false));
-  };
-
-  const handleGithubSignIn = () => {
-    singInUsingGithub()
-      .then((result) => {
-        const loggedInUser = result.user;
-        setUser(loggedInUser);
-        history.push(redirect_url);
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => setIsLoading(false));
-  };
 
   return (
     <Box
@@ -92,17 +32,19 @@ const Login = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
+        backgroundColor: "black",
+        color: "white"
       }}
     >
       <Container id="login" maxWidth="xl">
         {user?.email ? (
           <>
-            {/* <UserProfile /> */}
+            <UserProfile />
           </>
         ) : (
           <>
             <Container component="main" maxWidth="xs">
-              {/* <CssBaseline />
+              <CssBaseline />
 
               <Box
                 sx={{
@@ -113,12 +55,27 @@ const Login = () => {
                   alignItems: "center",
                 }}
               >
-                <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
-                  <LoginIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5">
-                  Sign In
+                <img src="logo.webp" />
+                <Typography component="h1" variant="h4">
+                  Log in to your account
                 </Typography>
+                <Grid
+                  container
+                  justifyContent="flex-end"
+                  style={{ justifyContent: "center" }}
+                >
+                  <Grid item>
+                    <Button onClick={toggleLogin(true)}>
+                      <Link
+                        className="body-link-text-style"
+                        to="/register"
+                        variant="body2"
+                      >
+                        New here? Register
+                      </Link>
+                    </Button>
+                  </Grid>
+                </Grid>
                 <Box component="div" noValidate sx={{ mt: 3 }}>
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
@@ -127,6 +84,7 @@ const Login = () => {
                         required
                         fullWidth
                         id="email"
+                        color="success"
                         label="Email Address"
                         name="email"
                         autoComplete="email"
@@ -141,6 +99,7 @@ const Login = () => {
                         label="Password"
                         type="password"
                         id="password"
+                        color="success"
                         autoComplete="new-password"
                       />
                       <Typography sx={{ p: 1 }} color="red">
@@ -164,71 +123,13 @@ const Login = () => {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
+                    color="success"
                   >
-                    <Fingerprint /> Login
+                    Sign in
                   </Button>
                 </Box>
-                <Grid
-                  container
-                  justifyContent="flex-end"
-                  style={{ justifyContent: "center" }}
-                >
-                  <Grid item>
-                    <Button onClick={toggleLogin(true)}>
-                      <Link
-                        className="body-link-text-style"
-                        to="/register"
-                        variant="body2"
-                      >
-                        New here? Register
-                      </Link>
-                    </Button>
-                  </Grid>
-                </Grid>
-
-                <Typography style={{ justifyContent: "center" }}>
-                  <Grid
-                    container
-                    sx={{ mt: 2, mb: 3 }}
-                    justifyContent="flex-end"
-                  >
-                    <Grid item>
-                      <GoogleButton
-                        className="google-btn"
-                        type="dark" // can be light or dark
-                        onClick={handleGoogleSignIn}
-                      />
-                    </Grid>
-                  </Grid>
-
-                  <Grid container sx={{ mb: 3 }} justifyContent="flex-end">
-
-                    <Grid item>
-                      <Button
-                        onClick={handleFacebooksignIn}
-                        variant="contained"
-                        sx={{ p: 1, bgcolor: "#4267B2" }}
-                      >
-                        <FacebookIcon />
-                        Facebook
-                      </Button>
-                    </Grid>
-                    <Typography textAlign="center" sx={{ p: 2 }}>
-                      Or
-                    </Typography>
-
-                    <Grid item>
-                      <Button
-                        onClick={handleGithubSignIn}
-                        variant="contained"
-                        sx={{ p: 1, mb: 2, bgcolor: "#171515" }}
-                      >
-                        <GitHubIcon /> GitHub
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Typography>
-              </Box> */}
+                
+              </Box>
             </Container>
           </>
         )}
